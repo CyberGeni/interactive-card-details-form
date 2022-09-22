@@ -16,60 +16,68 @@
 
 </head>
 
-<body class="font-['Space_Grotesk']">
-  <header class="flex flex-col justify-between bg-[url('images/bg-main-mobile.png')] bg-auto bg-cover bg-no-repeat text-white h-auto w-screen mx-auto py-12 mb-20">
-    <section class="flex self-end card-back mx-10 w-2/3 bg-auto bg-no-repeat">
-      <div class="relative">
-        <img class="" src="images/bg-card-back.png" alt="">
-        <span class="absolute top-[45%] right-11 text-xs" id="cvc">000</span>
-      </div>
-    </section>
-
-    <section class="card-front flex items-between mx-10 -my-16 justify-between relative bg-auto bg-no-repeat w-2/3">
-      <img class="" src="images/bg-card-front.png" alt="">
-      <div class="absolute p-5">
-        <div class="flex items-center space-x-3">
-          <div class="w-9 h-9 bg-white rounded-full"></div>
-          <div class="w-5 h-5 border rounded-full"></div>
+<body class="font-['Space_Grotesk'] md:flex md:items-center md:overflow-hidden">
+  <header class="md:relative flex flex-1 flex-col justify-between bg-[url('images/bg-main-mobile.png')] md:bg-none bg-cover bg-no-repeat text-white h-auto mx-auto py-12 md:py-0 mb-16 md:h-screen md:ml-0">
+    
+    <img class="hidden md:inline-block md:w-2/3 md:h-screen" src="images/bg-main-desktop.png" alt="">
+    <div class="flex flex-col md:absolute md:flex md:flex-col-reverse md:items-center md:h-screen md:justify-center ">
+      <section class="flex self-end card-back mx-10 w-2/3 bg-auto bg-no-repeat">
+        <div class="relative">
+          <img class="" src="images/bg-card-back.png" alt="">
+          <span class="absolute top-[45%] right-11 text-xs" id="cvc">000</span>
         </div>
-        <span id="card-number text-xl tracking-wider">0000 0000 0000 0000</span>
-        <div class="flex justify-between items-between text-xs tracking-wider">
-          <span class="uppercase" id="card-name">Jane Appleseed</span>
-          <span id="card-expiry">00/00</span>
+      </section>
+  
+      <section class="card-front mx-10 -my-16 md:my-2 justify-between bg-auto bg-no-repeat w-2/3">
+        
+        <div class="flex items-between content-between w-fit relative">
+          <img class="" src="images/bg-card-front.png" alt="">
+            <div class="flex flex-col justify-between content-between h-full w-full absolute p-5">
+              <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 bg-white rounded-full"></div>
+                <div class="w-5 h-5 border rounded-full"></div>
+              </div>
+              <p id="card-number" class="text-xl mt-auto mb-3">0000 0000 0000 0000</p>
+              <div class="flex justify-between items-between text-[10px] tracking-wider">
+                <span class="uppercase" id="card-name">Jane Appleseed</span>
+                <span id="card-expiry">00/00</span>
+              </div>
+          </div>
         </div>
-      </div>
-      
-    </section>
+        
+      </section>
+    </div>
+    
   </header>
 
-  <main class="w-4/5 mx-auto">
-    <form class="space-y-4" action="">
+  <main class="w-4/5 mx-auto flex flex-1">
+    <form class="space-y-4 md:w-4/5 md:mx-auto md:max-w-sm" action="">
 
       <div class="flex flex-col">
-        <label class="text-sm my-1 text-[#21092f] tracking-wider" for="">CARDHOLDER NAME</label>
+        <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">CARDHOLDER NAME</label>
         <input class="border-2 border-[] px-3 py-1 w-full rounded-md" type="text" placeholder="e.g. Jane Appleseed">
       </div>
 
       <div class="flex flex-col">
-        <label class="text-sm my-1 text-[#21092f] tracking-wider" for="">CARD NUMBER</label>
+        <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">CARD NUMBER</label>
         <input class="border-2 border-[] px-3 py-1 w-full rounded-md" type="number" placeholder="e.g. 1234 5678 9123 0000">
       </div>
 
       <div class="flex space-x-2">
         <div class="w-full">
-          <label class="text-sm my-1 text-[#21092f] tracking-wider" for="">Exp. Date (MM/YY)</label>
+          <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">Exp. Date (MM/YY)</label>
           <div class="flex space-x-2 ">
             <input class="border-2 border-[] px-3 py-1 w-full rounded-md" class="border-2 border-[#8e8593]" type="number" placeholder="MM">
             <input class="border-2 border-[] px-3 py-1 w-full rounded-md" type="number" placeholder="YY"> 
           </div>
         </div>
         <div class="w-full">
-          <label class="text-sm my-1 text-[#21092f] tracking-wider" for="">CVC</label>
+          <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">CVC</label>
           <input class="border-2 border-[] px-3 py-1 w-full rounded-md" type="number" placeholder="e.g. 123" maxlength="3">
         </div>
       </div>
 
-      <button class="bg-[#21092f] w-full text-white my-5 px-3 py-2 rounded" type="submit">Confirm</button>
+      <button class="bg-[#21092f] w-full text-white my-5 mb-8 px-3 py-2 rounded" type="submit">Confirm</button>
     </form>
 
     <!-- Completed state start -->
