@@ -13,7 +13,6 @@
   
   <!-- TailwindCSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 
 <body class="font-['Space_Grotesk'] md:flex md:items-center md:overflow-hidden">
@@ -40,7 +39,12 @@
               <p id="card-number" class="text-lg md:text-xl mt-auto mb-3">0000 0000 0000 0000</p>
               <div class="flex justify-between items-between text-[10px] tracking-wider">
                 <span class="uppercase" id="card-name">Jane Appleseed</span>
-                <span id="card-expiry">00/00</span>
+                
+                <div>
+                  <span id="card-expiry-month">00</span>
+                  <span>/</span>
+                  <span id="card-expiry-year">00</span>
+                </div>
               </div>
           </div>
         </div>
@@ -51,29 +55,29 @@
   </header>
 
   <main class="w-4/5 mx-auto flex flex-1">
-    <form class="space-y-4 md:w-4/5 md:mx-auto md:max-w-sm" action="">
+    <form id="form" class="space-y-4 md:w-4/5 md:mx-auto md:max-w-sm" action="">
 
       <div class="flex flex-col">
         <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">CARDHOLDER NAME</label>
-        <input class="border-2 border-[] px-3 py-1 w-full rounded-md" type="text" placeholder="e.g. Jane Appleseed">
+        <input id="nameInput" class=" border-2 border-[] px-3 py-1 w-full rounded-md" type="text" name="cardName" placeholder="e.g. Jane Appleseed" value="Jane Appleseed">
       </div>
 
       <div class="flex flex-col">
         <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">CARD NUMBER</label>
-        <input class="border-2 border-[] px-3 py-1 w-full rounded-md" type="number" placeholder="e.g. 1234 5678 9123 0000">
+        <input class="numberInput border-2 border-[] px-3 py-1 w-full rounded-md" type="number" name="cardNumber" placeholder="e.g. 1234 5678 9123 0000">
       </div>
 
       <div class="flex space-x-2">
         <div class="w-full">
           <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">Exp. Date (MM/YY)</label>
           <div class="flex space-x-2 ">
-            <input class="border-2 border-[] px-3 py-1 w-full rounded-md" class="border-2 border-[#8e8593]" type="number" placeholder="MM">
-            <input class="border-2 border-[] px-3 py-1 w-full rounded-md" type="number" placeholder="YY"> 
+            <input class="monthInput border-2 border-[] px-3 py-1 w-full rounded-md" class="border-2 border-[#8e8593]" type="number" placeholder="MM">
+            <input class="yearInput border-2 border-[] px-3 py-1 w-full rounded-md" type="number" placeholder="YY"> 
           </div>
         </div>
         <div class="w-full">
           <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">CVC</label>
-          <input class="border-2 border-[] px-3 py-1 w-full rounded-md" type="number" placeholder="e.g. 123" maxlength="3">
+          <input class="cvcInput border-2 border-[] px-3 py-1 w-full rounded-md" type="number" placeholder="e.g. 123" maxlength="3">
         </div>
       </div>
 
@@ -94,5 +98,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Treasureeee</a>.
   </div>
+
+  <script src="main.js" async></script>
 </body>
 </html>
