@@ -16,11 +16,10 @@
 </head>
 
 <body class="font-['Space_Grotesk'] md:flex md:items-center md:overflow-hidden">
-  <header class="md:relative flex flex-1 flex-col justify-between bg-[url('images/bg-main-mobile.png')] md:bg-none bg-cover bg-no-repeat text-white h-auto mx-auto py-12 md:py-0 mb-16 md:h-screen md:ml-0">
-    
+  <header class="md:relative flex flex-1 flex-col justify-between bg-[url('images/bg-main-mobile.png')] md:bg-none bg-cover bg-no-repeat text-white h-auto mx-auto py-12 md:py-0 mb-16 md:mb-0 md:h-screen md:ml-0">
     <img class="hidden md:inline-block md:w-2/3 md:h-screen" src="images/bg-main-desktop.png" alt="">
-    <div class="flex flex-col md:absolute md:flex md:flex-col-reverse md:items-center md:h-screen md:justify-center ">
-      <section class="flex self-end card-back mx-10 w-2/3 bg-auto bg-no-repeat">
+    <div class="flex flex-col md:absolute md:flex md:flex-col-reverse md:items-center md:h-screen md:justify-center sm:max-w-xl mx-auto md:mx-0 lg:ml-[10%]">
+      <section class="card-back flex self-end mx-10 w-2/3 bg-auto bg-no-repeat">
         <div class="relative">
           <img class="" src="images/bg-card-back.png" alt="">
           <span class="absolute top-[45%] right-11 text-xs" id="cvc">000</span>
@@ -36,9 +35,9 @@
                 <div class="w-9 h-9 bg-white rounded-full"></div>
                 <div class="w-5 h-5 border rounded-full"></div>
               </div>
-              <p id="card-number" class="text-lg md:text-xl mt-auto mb-3">0000 0000 0000 0000</p>
+              <p id="card-number" class="text-lg md:text-lg lg:text-xl mt-auto mb-3">0000 0000 0000 0000</p>
               <div class="flex justify-between items-between text-[10px] tracking-wider">
-                <span class="uppercase" id="card-name">Jane Appleseed</span>
+                <span class="uppercase" id="card-name">Your Name Here</span>
                 
                 <div>
                   <span id="card-expiry-month">00</span>
@@ -51,33 +50,62 @@
         
       </section>
     </div>
-    
   </header>
 
-  <main class="w-4/5 mx-auto flex flex-1">
+  <main class="w-4/5 mx-auto flex flex-1 md:pr-10">
     <form id="form" class="space-y-4 md:w-4/5 md:mx-auto md:max-w-sm" action="">
 
       <div class="flex flex-col">
         <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">CARDHOLDER NAME</label>
-        <input id="nameInput" class=" border-2 border-[] px-3 py-1 w-full rounded-md" type="text" name="cardName" placeholder="e.g. Jane Appleseed" value="Jane Appleseed">
+        
+        <input id="nameInput" class=" border-2 focus:outline-[#600594] px-3 py-1 w-full rounded-md" type="text" name="cardName" placeholder="e.g. Jane Appleseed" value="" required>
       </div>
 
       <div class="flex flex-col">
         <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">CARD NUMBER</label>
-        <input id="numberInput" class="border-2 border-[] px-3 py-1 w-full rounded-md" type="number" name="cardNumber" placeholder="e.g. 1234 5678 9123 0000" maxlength="3" required>
+        <input id="numberInput" 
+                class="border-2 focus:outline-[#600594] px-3 py-1 w-full rounded-md" 
+                type="number" 
+                name="cardNumber" 
+                placeholder="e.g. 1234 5678 9123 0000" 
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength = "16" 
+                min="0"
+                max="9999999999999999"
+                required>
       </div>
 
       <div class="flex space-x-2">
         <div class="w-full">
           <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">Exp. Date (MM/YY)</label>
           <div class="flex space-x-2 ">
-            <input id="monthInput" class=" border-2 border-[] px-3 py-1 w-full rounded-md" class="border-2 border-[#8e8593]" type="number" placeholder="MM" required>
-            <input id="yearInput" class=" border-2 border-[] px-3 py-1 w-full rounded-md" type="number" placeholder="YY" required> 
+            <input id="monthInput" class=" border-2 focus:outline-[#600594] px-3 py-1 w-full rounded-md"
+                    type="number" 
+                    name="cardNumber"  
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength = "2"
+                    max="12"
+                    placeholder="MM"
+                    required>
+            <input id="yearInput" class=" border-2 focus:outline-[#600594] px-3 py-1 w-full rounded-md" 
+                    type="number" 
+                    placeholder="YY" 
+                    required maxlength="2"
+                    type="number" 
+                    name="cardNumber" 
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    required> 
           </div>
         </div>
         <div class="w-full">
           <label class="text-xs my-1 text-[#21092f] tracking-wider" for="">CVC</label>
-          <input id="cvcInput" class=" border-2 border-[] px-3 py-1 w-full rounded-md" type="tel" placeholder="e.g. 123"  maxlength="3" required>
+          <input id="cvcInput" 
+                  class="border-2 focus:outline-[#600594] px-3 py-1 w-full rounded-md" 
+                  type="number" 
+                  placeholder="e.g. 123"  
+                  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                  maxlength="3" 
+                  required>
         </div>
       </div>
 
@@ -86,13 +114,14 @@
 
     <!-- Completed state start -->
 
-    <section class="hidden">
-      <img src="images/icon-complete.svg" alt="">
-      <h1>THANK YOU!</h1>
-      <p>We've added your card details</p>
-      <button>Continue</button>
+    <section id="success" class="hidden w-full md:max-w-md mx-auto">
+      <img class="mx-auto mb-6" src="images/icon-complete.svg" alt="">
+      <h1 class="text-center text-2xl tracking-widest text-[#21092f]">THANK YOU!</h1>
+      <p class="text-center text-[#8e8593]">We've added your card details</p>
+      <button class="bg-[#21092f] text-white w-full rounded-md my-5 py-3">Continue</button>
     </section>
   </main>
+
 
   <div class="attribution text-center hidden">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

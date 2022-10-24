@@ -11,15 +11,15 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
+- Linear gradient (active input border): hsl(249, 99%, 64%) #6448fe to hsl(278, 94%, 30%) #600594
 - Red (input errors): hsl(0, 100%, 66%)
 
 ### Neutral
 
 - White: hsl(0, 0%, 100%)
-- Light grayish violet: hsl(270, 3%, 87%)
-- Dark grayish violet: hsl(279, 6%, 55%)
-- Very dark violet: hsl(278, 68%, 11%)
+- Light grayish violet: hsl(270, 3%, 87% #dedddf
+- Dark grayish violet: hsl(279, 6%, 55%) #8e8593
+- Very dark violet: hsl(278, 68%, 11%) 	#21092f
 
 ## Typography
 
