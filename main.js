@@ -12,6 +12,8 @@ var cardExpiryMonth = document.getElementById('card-expiry-month');
 var cardExpiryYear = document.getElementById('card-expiry-year');
 var cvc = document.getElementById('cvc');
 
+
+
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
 });
