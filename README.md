@@ -6,3 +6,10 @@
 
 Thanks for checking out this front-end coding challenge.
 
+to do:
+
+
+[x] work on getting the DOM values
+
+
+[ ] change the lower section's content after the card details have been added
